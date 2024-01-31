@@ -32,7 +32,7 @@ services:
     volumes:
         - $PWD/src:/home/$DOCKER_USER/$PROJ/src
         - $PWD/docs:/home/$DOCKER_USER/$PROJ/docs
-    command: bash -c "rm -f docs/src* && sphinx-apidoc -o docs src && cd docs && make clean html"
+    command: bash -c "rm -f docs/{{cookiecutter.project_dir}}* && sphinx-apidoc -o docs {{cookiecutter.project_dir}} && cd docs && make clean html"
 
 
 
