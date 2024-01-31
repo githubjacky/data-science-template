@@ -2,6 +2,7 @@
 
 
 first_build:
+        rm -f log/.gitkeep report/.gitkeep notebooks/.gitkeep
 	git init
 	mkdir -p data/raw data/processed mlruns
 	dvc commit
