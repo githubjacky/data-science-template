@@ -96,5 +96,4 @@ target/
 
 # Hydra logs
 outputs
-/data
 /mlruns
