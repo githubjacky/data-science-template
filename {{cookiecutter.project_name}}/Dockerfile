@@ -29,7 +29,6 @@ RUN curl -sSL https://install.python-poetry.org | python3 -
 COPY pyproject.toml ./
 RUN poetry install
 EXPOSE 8888
-EXPOSE 8080
 EXPOSE 5050
 
 

@@ -21,17 +21,19 @@ services:
       - $PWD/config:/home/$DOCKER_USER/$PROJ/config
       - $PWD/log:/home/$DOCKER_USER/$PROJ/log
       - $PWD/data:/home/$DOCKER_USER/$PROJ/data
-      - $PWD/src:/home/$DOCKER_USER/$PROJ/ncls
+      - $PWD/src:/home/$DOCKER_USER/$PROJ/src
       - $PWD/tests:/home/$DOCKER_USER/$PROJ/tests
     command: pytest
 
 
-  pdoc:
+  doc:
     image: 0jacky/$PROJ:latest
-    container_name: pdco
-    ports:
-      - "8080:8080"
-    command: pdoc src -o docs --force && pdoc src --http localhost:8080
+    container_name: documentation
+    volumes:
+        - $PWD/src:/home/$DOCKER_USER/$PROJ/src
+        - $PWD/docs:/home/$DOCKER_USER/$PROJ/docs
+    command: bash -c "cd docs && make clean html && make html"
+
 
 
   # shell command: docker compose run --rm --service-ports mlflow_ui
