@@ -26,7 +26,7 @@ pytest:
 
 
 doc:
-	docker compose run --rm --service-ports doc
+	docker compose run --rm doc
 
 
 jupyter:
