@@ -3,12 +3,7 @@
 
 first_build:
 	git init
-	mkdir mlruns
 	mkdir -p data/raw data/processed
-	dvc init
-	dvc add mlruns data/raw data/processed
-	dvc remote add origin https://dagshub.com/githubjacky/{{cookiecutter.project_name}}.dvc
-	dvc remote default origin
 	docker compose build
 	git add .
 	git commit -m "first commit"
