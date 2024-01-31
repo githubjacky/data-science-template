@@ -7,7 +7,7 @@
 - [Poetry](https://python-poetry.org/docs/#installation): package management
 * [hydra](https://hydra.cc/): Manage configuration files
 * [DVC](https://dvc.org/): Data version control
-* [pdoc](https://github.com/pdoc3/pdoc): Automatically create an API documentation for your project
+* [sphinx](https://www.sphinx-doc.org/en/master/): Automatically create an API documentation for your project
 - [mlflow](https://mlflow.org/#core-concepts): experiment tracking
 
 
