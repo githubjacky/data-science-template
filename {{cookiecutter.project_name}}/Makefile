@@ -3,7 +3,8 @@
 
 first_build:
 	git init
-	mkdir -p data/raw data/processed
+	mkdir -p data/raw data/processed mlruns
+	dvc commit
 	docker compose build
 	git add .
 	git commit -m "first commit"
