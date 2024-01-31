@@ -1,0 +1,6 @@
+{
+    "project_name": "translate_english_address_to_chinese",
+    "author_name": "Hsiu-Hsuan Yeh",
+    "description": "utilizing my python package to query LLM, translating the English address to Chinese",
+    "compatible_python_versions": "^3.11"
+}

@@ -1,0 +1,62 @@
+version: '3.8'
+services:
+  # scrap_bigkinds:
+  build:
+    image: 0jacky/$PROJ:latest
+    container_name: build_container
+    build:
+      context: .
+      args:
+        UID: $UID
+        GID: $GID
+        USER: $DOCKER_USER
+        PROJ: $PROJ
+
+
+  pytest:
+    image: 0jacky/$PROJ:latest
+    container_name: pytest
+    # environment:
+    volumes:
+      - $PWD/config:/home/$DOCKER_USER/$PROJ/config
+      - $PWD/log:/home/$DOCKER_USER/$PROJ/log
+      - $PWD/data:/home/$DOCKER_USER/$PROJ/data
+      - $PWD/src:/home/$DOCKER_USER/$PROJ/ncls
+      - $PWD/tests:/home/$DOCKER_USER/$PROJ/tests
+    command: pytest
+
+
+  pdoc:
+    image: 0jacky/$PROJ:latest
+    container_name: pdco
+    ports:
+      - "8080:8080"
+    command: pdoc src -o docs --force && pdoc src --http localhost:8080
+
+
+  # shell command: docker compose run --rm --service-ports mlflow_ui
+  mlflow-ui:
+    image: 0jacky/$PROJ:latest
+    container_name: mlflow-ui
+    ports:
+      - "5050:5050"
+    volumes:
+      - $PWD/mlruns:/home/$DOCKER_USER/$PROJ/mlruns
+    command: mlflow ui -h 0.0.0.0 -p 5050
+
+
+  # shell command: docker compose run --rm --service-ports jupyter
+  jupyter-lab:
+    image: 0jacky/$PROJ:latest
+    container_name: jupyter-lab
+    # environment:
+    ports:
+      - "8888:8888"
+    volumes:
+      - $PWD/config:/home/$DOCKER_USER/$PROJ/config
+      - $PWD/log:/home/$DOCKER_USER/$PROJ/log
+      - $PWD/data:/home/$DOCKER_USER/$PROJ/data
+      - $PWD/src:/home/$DOCKER_USER/$PROJ/src
+      - $PWD/notebooks:/home/$DOCKER_USER/$PROJ/notebooks
+      - $PWD/mlruns:/home/$DOCKER_USER/$PROJ/mlruns
+    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
