@@ -18,7 +18,7 @@ build:
 
 
 clean:
-	docker rmi --force0jacky/{{cookiecutter.project_name}}:latest
+	docker rmi --force 0jacky/{{cookiecutter.project_name}}:latest
 
 
 pytest:
