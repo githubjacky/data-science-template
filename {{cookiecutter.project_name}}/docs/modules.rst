@@ -1,4 +1,4 @@
-src
+{{cookiecutter.project_dir}}
 ===
 
 .. toctree::
