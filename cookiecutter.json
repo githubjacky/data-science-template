@@ -1,8 +1,8 @@
 {
-    "project_name": "translate_english_address_to_chinese",
-    "project_dir": "src",
+    "project_name": "",
+    "project_dir": "",
     "author_name": "Hsiu-Hsuan Yeh",
-    "description": "utilizing my python package to query LLM, translating the English address to Chinese",
+    "description": "",
     "year": "2024",
     "compatible_python_versions": "^3.11"
 }
