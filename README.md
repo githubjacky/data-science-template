@@ -15,7 +15,7 @@ cookiecutter data-science-template
 ```sh
 make first_build
 ```
-7. connect a dagshup repo with a github repo, setup credentials and then publish
+7. connect a dagshub repo with a github repo, setup credentials and then publish
 ```
 dvc push
 ```
