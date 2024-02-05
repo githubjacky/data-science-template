@@ -1,4 +1,4 @@
-.PHONY: first_build build clean pytest pydoc jupyter mlflow
+.PHONY: first_build build clean pytest doc jupyter mlflow
 
 
 first_build:
