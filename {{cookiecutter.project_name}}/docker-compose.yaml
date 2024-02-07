@@ -21,7 +21,7 @@ services:
       - $PWD/config:/home/$DOCKER_USER/$PROJ/config
       - $PWD/log:/home/$DOCKER_USER/$PROJ/log
       - $PWD/data:/home/$DOCKER_USER/$PROJ/data
-      - $PWD/src:/home/$DOCKER_USER/$PROJ/src
+      - $PWD/{{cookiecutter.project_dir}}:/home/$DOCKER_USER/$PROJ/{{cookiecutter.project_dir}}
       - $PWD/tests:/home/$DOCKER_USER/$PROJ/tests
     command: pytest
 
@@ -30,7 +30,7 @@ services:
     image: 0jacky/$PROJ:latest
     container_name: documentation
     volumes:
-        - $PWD/src:/home/$DOCKER_USER/$PROJ/src
+        - $PWD/{{cookiecutter.project_dir}}:/home/$DOCKER_USER/$PROJ/{{cookiecutter.project_dir}}
         - $PWD/docs:/home/$DOCKER_USER/$PROJ/docs
     command: bash -c "rm -f docs/{{cookiecutter.project_dir}}* && sphinx-apidoc -o docs {{cookiecutter.project_dir}} && cd docs && make clean html"
 
@@ -59,7 +59,7 @@ services:
       - $PWD/config:/home/$DOCKER_USER/$PROJ/config
       - $PWD/log:/home/$DOCKER_USER/$PROJ/log
       - $PWD/data:/home/$DOCKER_USER/$PROJ/data
-      - $PWD/src:/home/$DOCKER_USER/$PROJ/src
+      - $PWD/{{cookiecutter.project_dir}}:/home/$DOCKER_USER/$PROJ/{{cookiecutter.project_dir}}
       - $PWD/notebooks:/home/$DOCKER_USER/$PROJ/notebooks
       - $PWD/mlruns:/home/$DOCKER_USER/$PROJ/mlruns
       - $PWD/scripts:/home/$DOCKER_USER/$PROJ/scripts
