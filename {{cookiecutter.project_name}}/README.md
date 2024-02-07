@@ -12,8 +12,9 @@
 
 
 ## Set up the environment, and Install dependencies
-1. Install docker
-2. create the docker image:
+1. Install [docker](https://docs.docker.com/get-docker/)
+2. modify the `.env.example`, assigning the environment variables and rename it as `.env`
+3. create the docker image:
 ```bash
 make build
 ```
