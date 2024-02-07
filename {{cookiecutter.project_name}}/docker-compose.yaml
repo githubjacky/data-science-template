@@ -62,4 +62,5 @@ services:
       - $PWD/src:/home/$DOCKER_USER/$PROJ/src
       - $PWD/notebooks:/home/$DOCKER_USER/$PROJ/notebooks
       - $PWD/mlruns:/home/$DOCKER_USER/$PROJ/mlruns
+      - $PWD/scripts:/home/$DOCKER_USER/$PROJ/scripts
     command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
