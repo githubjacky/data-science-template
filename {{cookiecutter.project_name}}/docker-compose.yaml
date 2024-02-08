@@ -1,6 +1,5 @@
 version: '3.8'
 services:
-  # scrap_bigkinds:
   build:
     image: 0jacky/$PROJ:latest
     container_name: build_container
