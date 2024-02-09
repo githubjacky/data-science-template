@@ -30,6 +30,7 @@ make clean
 make pytest
 
 # project documentation
+# after typing the command open docs/_build//html/index.html in the browser
 make doc
 
 # development IDE - Jupyter Lab
