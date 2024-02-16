@@ -2,6 +2,26 @@
 dev/
 ref/
 
+
+report/fonts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.nav
+*.out
+*.xml
+*.snm
+*.gz
+*.toc
+*.xdv
+report/meetings/**/*.log
+report/progress_report/**/*.log
+report/paper/**/*.log
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
